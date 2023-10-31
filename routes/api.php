@@ -15,8 +15,8 @@ use App\Http\Middleware\UnauthorizedResponse;
 |
 */
 
-Route::post('/register',[App\Http\Controllers\Api\Auth\AuthController::class, 'register'])->name('register');
-Route::post('/login',[App\Http\Controllers\Api\Auth\AuthController::class, 'login'])->name('login');
+Route::post('/register',[App\Http\Controllers\Api\Auth\AuthController::class, 'register']);
+Route::post('/login',[App\Http\Controllers\Api\Auth\AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group( function () {
     Route::get('/user', [\App\Http\Controllers\Api\Auth\UserController::class, 'user']);
     Route::post('/logout', [\App\Http\Controllers\Api\Auth\AuthController::class, 'logout']);
